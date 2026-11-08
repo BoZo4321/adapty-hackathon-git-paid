@@ -22,9 +22,10 @@ interface Props {
   users: RadarUser[];
   selectedUserId?: string;
   onSelectUser: (u: RadarUser) => void;
+  usingMock?: boolean;
 }
 
-export default function UserRadarTable({ users, selectedUserId, onSelectUser }: Props) {
+export default function UserRadarTable({ users, selectedUserId, onSelectUser, usingMock }: Props) {
   const [tier, setTier] = useState<RiskTier | "all">("all");
   const [goal, setGoal] = useState<OnboardingGoal | "all">("all");
 
@@ -46,6 +47,11 @@ export default function UserRadarTable({ users, selectedUserId, onSelectUser }: 
             Subscribers sorted by churn-risk score, highest first. Hover a row to see why they are at risk,
             click it to preview their rescue paywall on the phone.
           </InfoTip>
+          {usingMock && (
+            <span className="radar-mock-badge" title="Placeholder data. Backend unavailable or VITE_USE_MOCK=true for: GET /api/users/at-risk">
+              Mock data
+            </span>
+          )}
         </h3>
         <div className="radar-filters">
           <div className="radar-seg">

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { AtRiskUser, PaywallCopy, ProductKey } from "./types/contract";
 import { MobilePreview } from "./components/simulator/MobilePreview";
-import { CopyEditor } from "./components/simulator/CopyEditor";
-import { DeployModal } from "./components/simulator/DeployModal";
 import RadarPanel from "./components/radar/RadarPanel";
+import AtRiskSubscribers from "./components/radar/AtRiskSubscribers";
+import RadarStatus from "./components/radar/RadarStatus";
+import type { DataSource } from "./components/radar/types";
 
 const SAMPLE_USERS: AtRiskUser[] = [
   {
@@ -85,11 +86,8 @@ const SAMPLE_USERS: AtRiskUser[] = [
 export default function App() {
   const [selectedUser, setSelectedUser] = useState<AtRiskUser>(SAMPLE_USERS[0]);
   const [copyOverride, setCopyOverride] = useState<Partial<PaywallCopy> | null>(null);
-  const [selectedUpperTier, setSelectedUpperTier] = useState<ProductKey>("annual");
-  const [deployData, setDeployData] = useState<{
-    flowJson: Record<string, unknown>;
-    copy: PaywallCopy;
-  } | null>(null);
+  const [selectedUpperTier] = useState<ProductKey>("annual");
+  const [summarySource, setSummarySource] = useState<DataSource | null>(null);
 
   return (
     <div style={{ maxWidth: 1680, margin: "0 auto", padding: 24 }}>
@@ -110,46 +108,28 @@ export default function App() {
           <p style={{ margin: "4px 0 0", fontSize: 13, color: "#a9a5b8" }}>
             Lumen AI Photo Editor
           </p>
+          <RadarStatus usingMock={summarySource === "mock"} />
         </div>
       </header>
 
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2fr)", gap: 24, alignItems: "start" }}>
-        {/* Left Column: Person 3's Churn Risk Radar (clicking a table row selects the user) */}
-        <RadarPanel
+      {/* Top row: at-risk table (clicking a row selects the user) next to Person 4's 3-Tier iPhone Simulator */}
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2fr)", gap: 24, alignItems: "stretch", marginBottom: 24 }}>
+        <AtRiskSubscribers
           selectedUserId={selectedUser.user_id}
           onSelectUser={(u) => {
             setSelectedUser(u);
             setCopyOverride(null);
           }}
         />
-
-        {/* Right Column: Person 4's 3-Tier iPhone Simulator */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <CopyEditor
-            user={selectedUser}
-            onUpdateUser={setSelectedUser}
-            copyOverride={copyOverride}
-            onUpdateCopyOverride={setCopyOverride}
-            selectedUpperTier={selectedUpperTier}
-            onSelectUpperTier={setSelectedUpperTier}
-          />
-          <MobilePreview
-            user={selectedUser}
-            copyOverride={copyOverride}
-            selectedUpperTier={selectedUpperTier}
-            onOpenDeploy={(flowJson, copy) => setDeployData({ flowJson, copy })}
-          />
-        </div>
+        <MobilePreview
+          user={selectedUser}
+          copyOverride={copyOverride}
+          selectedUpperTier={selectedUpperTier}
+        />
       </div>
 
-      {deployData && (
-        <DeployModal
-          user={selectedUser}
-          compiledFlowJson={deployData.flowJson}
-          activeCopy={deployData.copy}
-          onClose={() => setDeployData(null)}
-        />
-      )}
+      {/* Below, full width: Person 3's Churn Risk Radar (KPIs + charts) */}
+      <RadarPanel onSourceChange={setSummarySource} />
     </div>
   );
 }
