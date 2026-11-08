@@ -8,7 +8,7 @@ export interface TierSummary {
   tier: RiskTier;
   min_score: number;
   users: number;
-  avg_risk: number; // 0-1
+  avg_risk?: number; // 0-1 (optional, not required by P1 backend)
   actual_churn_rate: number; // 0-1
   revenue_at_risk_usd: number;
   action: string;
@@ -42,9 +42,10 @@ export const TIER_LABEL: Record<RiskTier, string> = {
   low: "Low",
 };
 
-// "critical" is a sub-level of the high tier.
-export function tierOf(level: ChurnRiskLevel): RiskTier {
-  return level === "critical" || level === "high" ? "high" : level;
+export function tierOf(level: ChurnRiskLevel | string): RiskTier {
+  if (level === "high" || level === "critical") return "high";
+  if (level === "medium") return "medium";
+  return "low";
 }
 
 export type RadarUser = AtRiskUser;

@@ -8,7 +8,7 @@
   "tiers": [
     {
       "tier": "high",
-      "min_score": 70,
+      "min_score": 75,
       "users": 2300,
       "avg_risk": 0.8,
       "actual_churn_rate": 0.6,
@@ -17,7 +17,7 @@
     },
     {
       "tier": "medium",
-      "min_score": 35,
+      "min_score": 40,
       "users": 4900,
       "avg_risk": 0.5,
       "actual_churn_rate": 0.3,

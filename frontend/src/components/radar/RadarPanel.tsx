@@ -1,6 +1,7 @@
 // 🔒 OWNED BY PERSON 3: Composes KPI banner, charts, user table and data legend. The single component App.tsx mounts on the left.
 /// <reference types="vite/client" />
 import { useEffect, useState } from "react";
+import { ADAPTY_APP_ID } from "../../types/contract";
 import CohortCharts from "./CohortCharts";
 import KpiRoiBanner from "./KpiRoiBanner";
 import RealVsEnrichedBadge from "./RealVsEnrichedBadge";
@@ -9,7 +10,7 @@ import { fetchAtRiskUsers, fetchSummary } from "./api";
 import type { AnalyticsSummary, DataSource, RadarUser } from "./types";
 import "./radar.css";
 
-const APP_ID = import.meta.env.VITE_ADAPTY_APP_ID as string | undefined;
+const APP_ID = ADAPTY_APP_ID;
 
 interface Props {
   onSelectUser: (u: RadarUser) => void;

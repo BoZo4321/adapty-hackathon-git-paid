@@ -12,6 +12,9 @@ const OFFER_LABEL: Record<string, string> = {
   "10pct_off_upper_tier_streak_rescue": "10% off upper tier",
   upgrade_to_higher_tier: "Upgrade to higher tier",
   none_healthy_streak: "No paywall",
+  monthly_stepdown: "10% off upper tier (stepdown)",
+  streak_challenge: "Upgrade / streak challenge",
+  loyalty_only: "No paywall (loyalty)",
 };
 const humanize = (s: string) => OFFER_LABEL[s] ?? s.replace(/_/g, " ");
 

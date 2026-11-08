@@ -1,7 +1,7 @@
 [
   {
     "user_id": "u01000",
-    "adapty_cuid": "lumen_live_01000",
+    "adapty_cuid": "lumen_942195_01000",
     "platform": "iOS",
     "country": "GB",
     "acquisition_channel": "apple_search_ads",
@@ -28,7 +28,7 @@
   },
   {
     "user_id": "u01137",
-    "adapty_cuid": "lumen_live_01137",
+    "adapty_cuid": "lumen_942195_01137",
     "platform": "iOS",
     "country": "GB",
     "acquisition_channel": "organic",
@@ -55,7 +55,7 @@
   },
   {
     "user_id": "u01274",
-    "adapty_cuid": "lumen_live_01274",
+    "adapty_cuid": "lumen_942195_01274",
     "platform": "iOS",
     "country": "GB",
     "acquisition_channel": "apple_search_ads",
@@ -82,7 +82,7 @@
   },
   {
     "user_id": "u01411",
-    "adapty_cuid": "lumen_live_01411",
+    "adapty_cuid": "lumen_942195_01411",
     "platform": "Android",
     "country": "FR",
     "acquisition_channel": "google_uac",
@@ -97,7 +97,7 @@
     "inactive_days": 3,
     "streak_breaks": 2,
     "churn_risk_score": 97,
-    "churn_risk_level": "critical",
+    "churn_risk_level": "high",
     "risk_archetype": "weekly_price_fatigue",
     "risk_reasons": [
       "Broken 9-day streak, 3 days inactive",
@@ -109,7 +109,7 @@
   },
   {
     "user_id": "u01548",
-    "adapty_cuid": "lumen_live_01548",
+    "adapty_cuid": "lumen_942195_01548",
     "platform": "iOS",
     "country": "US",
     "acquisition_channel": "google_uac",
@@ -124,7 +124,7 @@
     "inactive_days": 5,
     "streak_breaks": 4,
     "churn_risk_score": 88,
-    "churn_risk_level": "critical",
+    "churn_risk_level": "high",
     "risk_archetype": "weekly_price_fatigue",
     "risk_reasons": [
       "Broken 12-day streak, 5 days inactive",
@@ -136,7 +136,7 @@
   },
   {
     "user_id": "u01685",
-    "adapty_cuid": "lumen_live_01685",
+    "adapty_cuid": "lumen_942195_01685",
     "platform": "iOS",
     "country": "CA",
     "acquisition_channel": "google_uac",
@@ -151,7 +151,7 @@
     "inactive_days": 3,
     "streak_breaks": 7,
     "churn_risk_score": 86,
-    "churn_risk_level": "critical",
+    "churn_risk_level": "high",
     "risk_archetype": "silent_trial_dropout",
     "risk_reasons": [
       "Broken 9-day streak, 3 days inactive",
@@ -163,7 +163,7 @@
   },
   {
     "user_id": "u01822",
-    "adapty_cuid": "lumen_live_01822",
+    "adapty_cuid": "lumen_942195_01822",
     "platform": "iOS",
     "country": "IN",
     "acquisition_channel": "organic",
@@ -190,7 +190,7 @@
   },
   {
     "user_id": "u01959",
-    "adapty_cuid": "lumen_live_01959",
+    "adapty_cuid": "lumen_942195_01959",
     "platform": "iOS",
     "country": "BR",
     "acquisition_channel": "google_uac",
@@ -217,7 +217,7 @@
   },
   {
     "user_id": "u02096",
-    "adapty_cuid": "lumen_live_02096",
+    "adapty_cuid": "lumen_942195_02096",
     "platform": "iOS",
     "country": "RS",
     "acquisition_channel": "apple_search_ads",
@@ -232,7 +232,7 @@
     "inactive_days": 5,
     "streak_breaks": 5,
     "churn_risk_score": 95,
-    "churn_risk_level": "critical",
+    "churn_risk_level": "high",
     "risk_archetype": "silent_trial_dropout",
     "risk_reasons": [
       "Broken 18-day streak, 5 days inactive",
@@ -244,7 +244,7 @@
   },
   {
     "user_id": "u02233",
-    "adapty_cuid": "lumen_live_02233",
+    "adapty_cuid": "lumen_942195_02233",
     "platform": "iOS",
     "country": "DE",
     "acquisition_channel": "meta_ads",
@@ -270,7 +270,7 @@
   },
   {
     "user_id": "u02370",
-    "adapty_cuid": "lumen_live_02370",
+    "adapty_cuid": "lumen_942195_02370",
     "platform": "Android",
     "country": "RS",
     "acquisition_channel": "google_uac",
@@ -296,7 +296,7 @@
   },
   {
     "user_id": "u02507",
-    "adapty_cuid": "lumen_live_02507",
+    "adapty_cuid": "lumen_942195_02507",
     "platform": "Android",
     "country": "US",
     "acquisition_channel": "google_uac",
@@ -322,7 +322,7 @@
   },
   {
     "user_id": "u02644",
-    "adapty_cuid": "lumen_live_02644",
+    "adapty_cuid": "lumen_942195_02644",
     "platform": "iOS",
     "country": "DE",
     "acquisition_channel": "meta_ads",
@@ -348,7 +348,7 @@
   },
   {
     "user_id": "u02781",
-    "adapty_cuid": "lumen_live_02781",
+    "adapty_cuid": "lumen_942195_02781",
     "platform": "iOS",
     "country": "FR",
     "acquisition_channel": "organic",
@@ -374,7 +374,7 @@
   },
   {
     "user_id": "u02918",
-    "adapty_cuid": "lumen_live_02918",
+    "adapty_cuid": "lumen_942195_02918",
     "platform": "iOS",
     "country": "DE",
     "acquisition_channel": "meta_ads",
@@ -400,7 +400,7 @@
   },
   {
     "user_id": "u03055",
-    "adapty_cuid": "lumen_live_03055",
+    "adapty_cuid": "lumen_942195_03055",
     "platform": "iOS",
     "country": "DE",
     "acquisition_channel": "google_uac",
@@ -426,7 +426,7 @@
   },
   {
     "user_id": "u03192",
-    "adapty_cuid": "lumen_live_03192",
+    "adapty_cuid": "lumen_942195_03192",
     "platform": "Android",
     "country": "FR",
     "acquisition_channel": "apple_search_ads",
@@ -452,7 +452,7 @@
   },
   {
     "user_id": "u03329",
-    "adapty_cuid": "lumen_live_03329",
+    "adapty_cuid": "lumen_942195_03329",
     "platform": "iOS",
     "country": "DE",
     "acquisition_channel": "organic",
@@ -478,7 +478,7 @@
   },
   {
     "user_id": "u03466",
-    "adapty_cuid": "lumen_live_03466",
+    "adapty_cuid": "lumen_942195_03466",
     "platform": "iOS",
     "country": "IN",
     "acquisition_channel": "google_uac",
@@ -503,7 +503,7 @@
   },
   {
     "user_id": "u03603",
-    "adapty_cuid": "lumen_live_03603",
+    "adapty_cuid": "lumen_942195_03603",
     "platform": "iOS",
     "country": "FR",
     "acquisition_channel": "organic",
@@ -528,7 +528,7 @@
   },
   {
     "user_id": "u03740",
-    "adapty_cuid": "lumen_live_03740",
+    "adapty_cuid": "lumen_942195_03740",
     "platform": "iOS",
     "country": "BR",
     "acquisition_channel": "organic",
@@ -553,7 +553,7 @@
   },
   {
     "user_id": "u03877",
-    "adapty_cuid": "lumen_live_03877",
+    "adapty_cuid": "lumen_942195_03877",
     "platform": "Android",
     "country": "CA",
     "acquisition_channel": "google_uac",
@@ -578,7 +578,7 @@
   },
   {
     "user_id": "u04014",
-    "adapty_cuid": "lumen_live_04014",
+    "adapty_cuid": "lumen_942195_04014",
     "platform": "Android",
     "country": "CA",
     "acquisition_channel": "google_uac",
@@ -603,7 +603,7 @@
   },
   {
     "user_id": "u04151",
-    "adapty_cuid": "lumen_live_04151",
+    "adapty_cuid": "lumen_942195_04151",
     "platform": "Android",
     "country": "DE",
     "acquisition_channel": "apple_search_ads",
@@ -628,7 +628,7 @@
   },
   {
     "user_id": "u04288",
-    "adapty_cuid": "lumen_live_04288",
+    "adapty_cuid": "lumen_942195_04288",
     "platform": "iOS",
     "country": "RS",
     "acquisition_channel": "google_uac",

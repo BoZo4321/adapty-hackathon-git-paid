@@ -1,10 +1,11 @@
 /**
  * 🔒 OWNED BY PERSON 4 — AI Paywall Copy & Live 4-Streak Simulator Controls
  * Lets you tweak the 4 daily streak variables (streak_days, streak_best, inactive_days, streak_breaks)
- * or upper-tier product selection and watch the iPhone simulator switch between Low / Mid / High risk!
+ * or upper-tier product selection and calls POST /api/risk/score so the backend XGBoost model
+ * determines churn_risk_score and churn_risk_level (never recalculated on the frontend).
  */
-import React from "react";
-import { AtRiskUser, PaywallCopy, ProductKey } from "../../types/contract";
+import React, { useEffect, useRef, useState } from "react";
+import { AtRiskUser, ChurnRiskLevel, PaywallCopy, ProductKey } from "../../types/contract";
 
 interface Props {
   user: AtRiskUser;
@@ -15,38 +16,10 @@ interface Props {
   onSelectUpperTier?: (tier: ProductKey) => void;
 }
 
-function recalculateRiskFromStreaks(u: AtRiskUser): AtRiskUser {
-  let score = 20;
-  const reasons: string[] = [];
-
-  if (u.streak_days === 0 && u.inactive_days >= 3) {
-    score += 40;
-    reasons.push(`Broken ${u.streak_best}d streak + ${u.inactive_days}d inactive`);
-  } else if (u.inactive_days >= 2) {
-    score += 22;
-    reasons.push(`${u.inactive_days} days inactive (slowing momentum)`);
-  }
-
-  score += Math.min(24, u.streak_breaks * 8);
-  if (u.product === "weekly") {
-    score += 12;
-  }
-  if (u.streak_days >= 7 && u.inactive_days === 0) {
-    score = 12;
-    reasons.length = 0;
-    reasons.push(`Active ${u.streak_days}-day streak • Healthy retention`);
-  }
-
-  const bounded = Math.max(5, Math.min(99, score));
-  const level: AtRiskUser["churn_risk_level"] =
-    bounded >= 75 ? "critical" : bounded >= 60 ? "high" : bounded >= 35 ? "medium" : "low";
-
-  return {
-    ...u,
-    churn_risk_score: bounded,
-    churn_risk_level: level,
-    risk_reasons: reasons.length ? reasons : u.risk_reasons,
-  };
+interface ScoreApiResponse {
+  churn_probability: number;
+  churn_risk_score: number;
+  churn_risk_level: ChurnRiskLevel;
 }
 
 export const CopyEditor: React.FC<Props> = ({
@@ -57,16 +30,78 @@ export const CopyEditor: React.FC<Props> = ({
   selectedUpperTier = "annual",
   onSelectUpperTier,
 }) => {
+  const [scoringStatus, setScoringStatus] = useState<"idle" | "scoring" | "error">("idle");
+  const debounceRef = useRef<number | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
+  const latestUserRef = useRef<AtRiskUser>(user);
+  latestUserRef.current = user;
+
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) window.clearTimeout(debounceRef.current);
+      abortRef.current?.abort();
+    };
+  }, []);
+
+  const requestApiScore = (candidate: AtRiskUser) => {
+    if (debounceRef.current) window.clearTimeout(debounceRef.current);
+    abortRef.current?.abort();
+
+    debounceRef.current = window.setTimeout(async () => {
+      const controller = new AbortController();
+      abortRef.current = controller;
+      setScoringStatus("scoring");
+      try {
+        const resp = await fetch("/api/risk/score", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: controller.signal,
+          body: JSON.stringify({
+            streak_days: candidate.streak_days,
+            streak_best: candidate.streak_best,
+            inactive_days: candidate.inactive_days,
+            streak_breaks: candidate.streak_breaks,
+            ai_edits_first_day: candidate.ai_edits_first_day ?? 0,
+            photos_imported: candidate.photos_imported ?? 0,
+            push_opt_in_bin: candidate.push_opt_in === "yes" ? 1 : 0,
+            price_usd: candidate.price_usd ?? 0,
+            country: candidate.country,
+            os: candidate.platform?.toLowerCase() === "android" ? "android 15" : "ios 18.3",
+            acquisition_channel: candidate.acquisition_channel,
+            onboarding_goal: candidate.onboarding_goal,
+          }),
+        });
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}`);
+        }
+        const data = (await resp.json()) as ScoreApiResponse;
+        const current = latestUserRef.current;
+        if (current.user_id === candidate.user_id) {
+          onUpdateUser({
+            ...current,
+            churn_risk_score: data.churn_risk_score,
+            churn_risk_level: data.churn_risk_level,
+          });
+        }
+        setScoringStatus("idle");
+      } catch (err) {
+        if ((err as Error)?.name === "AbortError") return;
+        setScoringStatus("error");
+      }
+    }, 150);
+  };
+
   const handleStreakChange = (
     field: "streak_days" | "streak_best" | "inactive_days" | "streak_breaks",
     val: number
   ) => {
-    const next = { ...user, [field]: val };
+    const next: AtRiskUser = { ...user, [field]: val };
     if (field === "streak_days" && val > 0) {
       next.inactive_days = 0;
       if (val > next.streak_best) next.streak_best = val;
     }
-    onUpdateUser(recalculateRiskFromStreaks(next));
+    onUpdateUser(next);
+    requestApiScore(next);
   };
 
   return (
@@ -89,8 +124,10 @@ export const CopyEditor: React.FC<Props> = ({
         <h3 style={{ margin: 0, fontSize: 14, color: "#fff" }}>
           Interactive Streak & Paywall Copy Controls
         </h3>
-        <span style={{ fontSize: 11, color: "#c084fc", fontWeight: 700 }}>
+        <span style={{ fontSize: 11, color: scoringStatus === "error" ? "#f87171" : "#c084fc", fontWeight: 700 }}>
           Risk Score: {user.churn_risk_score}/100 ({user.churn_risk_level.toUpperCase()})
+          {scoringStatus === "scoring" && " • scoring..."}
+          {scoringStatus === "error" && " • API offline"}
         </span>
       </div>
 

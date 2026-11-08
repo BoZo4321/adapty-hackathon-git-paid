@@ -70,7 +70,7 @@ export default function CohortCharts({ summary }: { summary: AnalyticsSummary })
 
   const decay = summary.streak_decay;
   const decayData = decay.days_before_event.map((d, i) => ({
-    day: d === 0 ? "event" : `-${d}d`,
+    day: d === 0 ? "event" : `-${Math.abs(d)}d`,
     churned: decay.churned[i],
     retained: decay.retained[i],
   }));

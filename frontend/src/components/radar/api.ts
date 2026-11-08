@@ -1,7 +1,12 @@
 /// <reference types="vite/client" />
 // Radar data calls (backend owned by Person 1). Falls back to mock JSON so the demo never breaks.
 // No API keys here: the frontend only talks to our own backend.
-import type { AtRiskUser } from "../../types/contract";
+import {
+  formatAdaptyCuid,
+  LIVE_ADAPTY_PRODUCTS,
+  type AtRiskUser,
+  type ProductKey,
+} from "../../types/contract";
 import summaryMock from "./mock/summary.json";
 import usersMock from "./mock/users.json";
 import type { AnalyticsSummary, Loaded, RiskTier } from "./types";
@@ -19,13 +24,37 @@ async function getJson<T>(path: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-// Accept both the shared contract names and the alternative names from the P3 spec
-// (current_product / risk_drivers), so a naming mismatch with the backend doesn't blank the table.
+// Accept both the shared contract names and the alternative names from P1's router.py
+// (current_product / risk_drivers), and fill adapty_cuid (lumen_942195_NNNNN) + price_usd.
 function normalizeUser(raw: Record<string, unknown>): AtRiskUser {
   const u = { ...raw } as Record<string, unknown>;
-  if (u.product === undefined && u.current_product !== undefined) u.product = u.current_product;
-  if (u.risk_reasons === undefined && u.risk_drivers !== undefined) u.risk_reasons = u.risk_drivers;
-  if (!Array.isArray(u.risk_reasons)) u.risk_reasons = [];
+  if (u.product === undefined && u.current_product !== undefined) {
+    u.product = u.current_product;
+  }
+  const prodKey = String(u.product || "weekly") as ProductKey;
+  if (u.price_usd === undefined) {
+    u.price_usd = LIVE_ADAPTY_PRODUCTS[prodKey]?.priceUsd ?? 0;
+  }
+  if (u.risk_reasons === undefined && u.risk_drivers !== undefined) {
+    u.risk_reasons = u.risk_drivers;
+  }
+  if (!Array.isArray(u.risk_reasons)) {
+    u.risk_reasons = [];
+  }
+  u.adapty_cuid = formatAdaptyCuid(
+    String(u.user_id ?? ""),
+    typeof u.adapty_cuid === "string" ? u.adapty_cuid : undefined
+  );
+  // Keep exact risk level returned by API (normalize legacy "critical" -> "high")
+  if (u.churn_risk_level === "critical") {
+    u.churn_risk_level = "high";
+  }
+  if (u.photos_imported === undefined) u.photos_imported = 0;
+  if (u.ai_edits_first_day === undefined) u.ai_edits_first_day = 0;
+  if (u.platform === undefined) u.platform = "iOS";
+  if (u.country === undefined) u.country = "US";
+  if (u.acquisition_channel === undefined) u.acquisition_channel = "organic";
+  if (u.push_opt_in === undefined) u.push_opt_in = "no";
   return u as unknown as AtRiskUser;
 }
 
