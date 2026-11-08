@@ -19,6 +19,7 @@ env/
 data/*.parquet
 data/*.csv
 data/*.csv.gz
+data/adapty_sync/
 backend/data_cache/
 *.tmp
 
