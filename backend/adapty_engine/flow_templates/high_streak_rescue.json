@@ -1,0 +1,2051 @@
+{
+  "config": {
+    "screens": [
+      {
+        "id": "scr_paywall",
+        "props": {
+          "fill": [
+            {
+              "type": "color",
+              "color": {
+                "type": "color-style",
+                "colorId": "white"
+              }
+            }
+          ],
+          "layout": {
+            "alignH": "start",
+            "alignV": "start",
+            "direction": "vertical",
+            "distribution": {
+              "gap": 0,
+              "type": "gap"
+            }
+          },
+          "padding": {
+            "top": 12,
+            "left": 20,
+            "right": 20,
+            "bottom": 24
+          },
+          "safeArea": true,
+          "statusBar": false,
+          "scrollable": true,
+          "progressBar": {
+            "enabled": false
+          },
+          "statusBarTheme": "light"
+        },
+        "caption": "Paywall",
+        "elements": {
+          "map": {
+            "el_397S": {
+              "id": "el_397S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-200"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 24,
+                  "br": 24,
+                  "tl": 24,
+                  "tr": 24
+                }
+              },
+              "states": [],
+              "caption": "Button",
+              "interactions": [
+                {
+                  "id": "int_397S",
+                  "actions": [
+                    {
+                      "id": "act_closeFlow",
+                      "type": "closeFlow"
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_398I": {
+              "id": "el_398I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "X",
+                  "size": 20,
+                  "type": "phosphor",
+                  "color": {
+                    "hex": "#333333",
+                    "type": "hex"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_399S": {
+              "id": "el_399S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "end",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_400T": {
+              "id": "el_400T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "h1"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-900"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Don't lose your streak: 10% off*",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none"
+              },
+              "states": []
+            },
+            "el_401T": {
+              "id": "el_401T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "*Requires an App Store win-back offer. Not attached in this demo.",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none"
+              },
+              "states": []
+            },
+            "el_402S": {
+              "id": "el_402S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_403S": {
+              "id": "el_403S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "List"
+            },
+            "el_404S": {
+              "id": "el_404S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_405I": {
+              "id": "el_405I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Sparkle",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_406S": {
+              "id": "el_406S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_407T": {
+              "id": "el_407T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Unlimited AI edits",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_408T": {
+              "id": "el_408T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "No daily limits",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_409S": {
+              "id": "el_409S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_410I": {
+              "id": "el_410I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Palette",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_411S": {
+              "id": "el_411S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_412T": {
+              "id": "el_412T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "New styles since you left",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_413T": {
+              "id": "el_413T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Fresh packs every week",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_414S": {
+              "id": "el_414S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_415I": {
+              "id": "el_415I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Image",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_416S": {
+              "id": "el_416S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_417T": {
+              "id": "el_417T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "No watermark",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_418T": {
+              "id": "el_418T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Export in full resolution",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_419S": {
+              "id": "el_419S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Products"
+            },
+            "el_420P": {
+              "id": "el_420P",
+              "type": "product",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-100"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "default": true,
+                "groupId": "plans",
+                "padding": {
+                  "top": 12,
+                  "left": 12,
+                  "right": 12,
+                  "bottom": 12
+                },
+                "product": {
+                  "id": "4869398e-f4d0-4e85-b3a9-7c7d31394e74"
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [
+                {
+                  "id": "selected",
+                  "type": "system"
+                }
+              ],
+              "caption": "Product",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_421S": {
+              "id": "el_421S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_422T": {
+              "id": "el_422T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "h3"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Monthly",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_423T": {
+              "id": "el_423T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "small-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          },
+                          {
+                            "type": "variable",
+                            "attrs": {
+                              "productRef": {
+                                "field": "prod_price",
+                                "target": {
+                                  "id": "4869398e-f4d0-4e85-b3a9-7c7d31394e74",
+                                  "kind": "product"
+                                }
+                              },
+                              "variableId": "4869398e-f4d0-4e85-b3a9-7c7d31394e74.prod_price"
+                            }
+                          },
+                          {
+                            "text": " per month, cancel anytime",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_424S": {
+              "id": "el_424S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-200"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Radiobutton",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_425S": {
+              "id": "el_425S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Dot",
+              "propsByState": {
+                "selected": {
+                  "fill": [
+                    {
+                      "type": "color",
+                      "color": {
+                        "type": "color-style",
+                        "colorId": "gray-800"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "el_426S": {
+              "id": "el_426S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 20,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_427F": {
+              "id": "el_427F",
+              "type": "footer",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "end",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 24,
+                  "left": 16,
+                  "right": 16,
+                  "bottom": 16
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Footer"
+            },
+            "el_428S": {
+              "id": "el_428S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "accent"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 16,
+                  "right": 16,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "CTA button",
+              "interactions": [
+                {
+                  "id": "int_428S",
+                  "actions": [
+                    {
+                      "id": "act_buy",
+                      "type": "purchase",
+                      "payload": {
+                        "product": {
+                          "type": "var",
+                          "variableId": "plans.selectedProduct"
+                        }
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_429T": {
+              "id": "el_429T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "white"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Save my streak",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "CTA label"
+            },
+            "el_430S": {
+              "id": "el_430S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "type": "space-between"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Footer links"
+            },
+            "el_431S": {
+              "id": "el_431S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Terms button",
+              "interactions": [
+                {
+                  "id": "int_431S",
+                  "actions": [
+                    {
+                      "id": "act_terms",
+                      "type": "openUrl",
+                      "payload": {
+                        "url": "https://adapty.io/terms/"
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_432T": {
+              "id": "el_432T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Terms",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Terms label"
+            },
+            "el_433S": {
+              "id": "el_433S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Restore button",
+              "interactions": [
+                {
+                  "id": "int_433S",
+                  "actions": [
+                    {
+                      "id": "act_restorePurchases",
+                      "type": "restorePurchases"
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_434T": {
+              "id": "el_434T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": "Restore",
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Restore label"
+            },
+            "el_435S": {
+              "id": "el_435S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Privacy button",
+              "interactions": [
+                {
+                  "id": "int_435S",
+                  "actions": [
+                    {
+                      "id": "act_privacy",
+                      "type": "openUrl",
+                      "payload": {
+                        "url": "https://adapty.io/privacy/"
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_436T": {
+              "id": "el_436T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Privacy",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Privacy label"
+            }
+          },
+          "hierarchy": {
+            "id": "root",
+            "children": [
+              {
+                "id": "el_426S",
+                "children": [
+                  {
+                    "id": "el_399S",
+                    "children": [
+                      {
+                        "id": "el_397S",
+                        "children": [
+                          {
+                            "id": "el_398I"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_402S",
+                    "children": [
+                      {
+                        "id": "el_400T"
+                      },
+                      {
+                        "id": "el_401T"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_403S",
+                    "children": [
+                      {
+                        "id": "el_404S",
+                        "children": [
+                          {
+                            "id": "el_405I"
+                          },
+                          {
+                            "id": "el_406S",
+                            "children": [
+                              {
+                                "id": "el_407T"
+                              },
+                              {
+                                "id": "el_408T"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_409S",
+                        "children": [
+                          {
+                            "id": "el_410I"
+                          },
+                          {
+                            "id": "el_411S",
+                            "children": [
+                              {
+                                "id": "el_412T"
+                              },
+                              {
+                                "id": "el_413T"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_414S",
+                        "children": [
+                          {
+                            "id": "el_415I"
+                          },
+                          {
+                            "id": "el_416S",
+                            "children": [
+                              {
+                                "id": "el_417T"
+                              },
+                              {
+                                "id": "el_418T"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_419S",
+                    "children": [
+                      {
+                        "id": "el_420P",
+                        "children": [
+                          {
+                            "id": "el_421S",
+                            "children": [
+                              {
+                                "id": "el_422T"
+                              },
+                              {
+                                "id": "el_423T"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "el_424S",
+                            "children": [
+                              {
+                                "id": "el_425S"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "el_427F",
+                "children": [
+                  {
+                    "id": "el_428S",
+                    "children": [
+                      {
+                        "id": "el_429T"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_430S",
+                    "children": [
+                      {
+                        "id": "el_431S",
+                        "children": [
+                          {
+                            "id": "el_432T"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_433S",
+                        "children": [
+                          {
+                            "id": "el_434T"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_435S",
+                        "children": [
+                          {
+                            "id": "el_436T"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "products": [
+          {
+            "id": "4869398e-f4d0-4e85-b3a9-7c7d31394e74"
+          }
+        ],
+        "selectableGroups": [
+          {
+            "id": "plans",
+            "type": "product"
+          }
+        ]
+      }
+    ],
+    "locales": [
+      {
+        "id": "en",
+        "code": "en",
+        "name": "English"
+      }
+    ],
+    "defaultLocale": "en",
+    "variables": [],
+    "theme": {
+      "colors": [
+        {
+          "id": "accent",
+          "dark": {
+            "hex": "#6C4CF5"
+          },
+          "name": "Accent",
+          "light": {
+            "hex": "#6C4CF5"
+          }
+        },
+        {
+          "id": "white",
+          "dark": {
+            "hex": "#FFFFFF"
+          },
+          "name": "White",
+          "light": {
+            "hex": "#FFFFFF"
+          }
+        },
+        {
+          "id": "gray-100",
+          "dark": {
+            "hex": "#F4F3F8"
+          },
+          "name": "Gray 100",
+          "light": {
+            "hex": "#F4F3F8"
+          }
+        },
+        {
+          "id": "gray-200",
+          "dark": {
+            "hex": "#E4E2EC"
+          },
+          "name": "Gray 200",
+          "light": {
+            "hex": "#E4E2EC"
+          }
+        },
+        {
+          "id": "gray-300",
+          "dark": {
+            "hex": "#CFCCDA"
+          },
+          "name": "Gray 300",
+          "light": {
+            "hex": "#CFCCDA"
+          }
+        },
+        {
+          "id": "gray-400",
+          "dark": {
+            "hex": "#A9A5B8"
+          },
+          "name": "Gray 400",
+          "light": {
+            "hex": "#A9A5B8"
+          }
+        },
+        {
+          "id": "gray-500",
+          "dark": {
+            "hex": "#7D7990"
+          },
+          "name": "Gray 500",
+          "light": {
+            "hex": "#7D7990"
+          }
+        },
+        {
+          "id": "gray-700",
+          "dark": {
+            "hex": "#3D3950"
+          },
+          "name": "Gray 700",
+          "light": {
+            "hex": "#3D3950"
+          }
+        },
+        {
+          "id": "gray-800",
+          "dark": {
+            "hex": "#24212F"
+          },
+          "name": "Gray 800",
+          "light": {
+            "hex": "#24212F"
+          }
+        },
+        {
+          "id": "gray-900",
+          "dark": {
+            "hex": "#14121C"
+          },
+          "name": "Gray 900",
+          "light": {
+            "hex": "#14121C"
+          }
+        }
+      ],
+      "typography": [
+        {
+          "id": "h1",
+          "name": "H1",
+          "settings": {
+            "size": 30,
+            "weight": "bold"
+          }
+        },
+        {
+          "id": "h2",
+          "name": "H2",
+          "settings": {
+            "size": 24,
+            "weight": "bold"
+          }
+        },
+        {
+          "id": "h3",
+          "name": "H3",
+          "settings": {
+            "size": 17,
+            "weight": "semibold"
+          }
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "settings": {
+            "size": 15,
+            "weight": "regular"
+          }
+        },
+        {
+          "id": "button-label",
+          "name": "Button label",
+          "settings": {
+            "size": 16,
+            "weight": "semibold"
+          }
+        },
+        {
+          "id": "caption",
+          "name": "Caption",
+          "settings": {
+            "size": 12,
+            "weight": "regular"
+          }
+        },
+        {
+          "id": "small-label",
+          "name": "Small label",
+          "settings": {
+            "size": 13,
+            "weight": "regular"
+          }
+        }
+      ]
+    },
+    "components": {},
+    "_meta": {
+      "icons": [
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z\"></path></svg>",
+          "name": "X",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z\"></path></svg>",
+          "name": "Sparkle",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z\"></path></svg>",
+          "name": "Palette",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z\"></path></svg>",
+          "name": "Image",
+          "weight": "regular"
+        }
+      ],
+      "fonts": [],
+      "screens": {
+        "scr_paywall": {
+          "products": [
+            {
+              "id": "4869398e-f4d0-4e85-b3a9-7c7d31394e74",
+              "flowProductId": "c8ce5c03-9434-55ed-b64c-c0e127234a9a"
+            }
+          ]
+        }
+      }
+    },
+    "schemaVersion": 12
+  },
+  "remote_configs": [],
+  "updated_at": 1793991652079,
+  "status": "published",
+  "publication_status": "published",
+  "transform_error": null,
+  "publication_error": null
+}
