@@ -1,0 +1,29 @@
+[
+  {
+    "user_id": "u00042",
+    "customer_user_id": "lumen_942195_00042",
+    "churn_risk_level": "low",
+    "streak_days": 21,
+    "streak_best": 34,
+    "inactive_days": 0,
+    "streak_breaks": 1
+  },
+  {
+    "user_id": "u01337",
+    "customer_user_id": "lumen_942195_01337",
+    "churn_risk_level": "medium",
+    "streak_days": 3,
+    "streak_best": 18,
+    "inactive_days": 4,
+    "streak_breaks": 5
+  },
+  {
+    "user_id": "u04321",
+    "customer_user_id": "lumen_942195_04321",
+    "churn_risk_level": "high",
+    "streak_days": 0,
+    "streak_best": 12,
+    "inactive_days": 19,
+    "streak_breaks": 9
+  }
+]
