@@ -20,7 +20,6 @@ interface Props {
   user: AtRiskUser;
   copyOverride?: Partial<PaywallCopy> | null;
   selectedUpperTier?: ProductKey;
-  onOpenDeploy: (compiledFlowJson: Record<string, unknown>, activeCopy: PaywallCopy) => void;
 }
 
 const GOAL_DISPLAY: Record<OnboardingGoal, { name: string; emoji: string; samplePrompt: string }> = {
@@ -201,7 +200,6 @@ export const MobilePreview: React.FC<Props> = ({
   user,
   copyOverride,
   selectedUpperTier = "annual",
-  onOpenDeploy,
 }) => {
   const [activeTab, setActiveTab] = useState<SimulatorTierTab>("high");
   const [showJson, setShowJson] = useState<boolean>(false);
@@ -693,9 +691,10 @@ export const MobilePreview: React.FC<Props> = ({
                   </div>
                 </div>
 
-                {/* el_428S + el_429T: CTA Purchase Button */}
+                {/* el_428S + el_429T: CTA Purchase Button (visual only, no action in the preview) */}
                 <button
-                  onClick={() => onOpenDeploy(compiledJson, activeCopy)}
+                  type="button"
+                  tabIndex={-1}
                   style={{
                     width: "100%",
                     height: 44,
@@ -705,7 +704,7 @@ export const MobilePreview: React.FC<Props> = ({
                     border: "none",
                     fontSize: 13,
                     fontWeight: 700,
-                    cursor: "pointer",
+                    cursor: "default",
                     marginTop: "auto",
                   }}
                 >
@@ -731,27 +730,6 @@ export const MobilePreview: React.FC<Props> = ({
           </div>
         </div>
       )}
-
-      {/* Deploy to Adapty Action Button */}
-      <div style={{ marginTop: 16 }}>
-        <button
-          onClick={() => onOpenDeploy(compiledJson, activeCopy)}
-          style={{
-            width: "100%",
-            padding: "12px 16px",
-            borderRadius: 10,
-            background: "linear-gradient(90deg, #6c4cf5 0%, #9333ea 100%)",
-            color: "#fff",
-            border: "none",
-            fontSize: 13,
-            fontWeight: 800,
-            cursor: "pointer",
-            boxShadow: "0 6px 20px rgba(108, 76, 245, 0.35)",
-          }}
-        >
-          🚀 Deploy {activeTab.toUpperCase()} Risk Flow & Sync Profile to Adapty
-        </button>
-      </div>
     </section>
   );
 };
