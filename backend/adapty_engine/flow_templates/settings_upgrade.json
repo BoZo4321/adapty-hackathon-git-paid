@@ -1,0 +1,2411 @@
+{
+  "config": {
+    "screens": [
+      {
+        "id": "scr_paywall",
+        "props": {
+          "fill": [
+            {
+              "type": "color",
+              "color": {
+                "type": "color-style",
+                "colorId": "white"
+              }
+            }
+          ],
+          "layout": {
+            "alignH": "start",
+            "alignV": "start",
+            "direction": "vertical",
+            "distribution": {
+              "gap": 0,
+              "type": "gap"
+            }
+          },
+          "padding": {
+            "top": 12,
+            "left": 20,
+            "right": 20,
+            "bottom": 24
+          },
+          "safeArea": true,
+          "statusBar": false,
+          "scrollable": true,
+          "progressBar": {
+            "enabled": false
+          },
+          "statusBarTheme": "light"
+        },
+        "caption": "Paywall",
+        "elements": {
+          "map": {
+            "el_351S": {
+              "id": "el_351S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-200"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 24,
+                  "br": 24,
+                  "tl": 24,
+                  "tr": 24
+                }
+              },
+              "states": [],
+              "caption": "Button",
+              "interactions": [
+                {
+                  "id": "int_351S",
+                  "actions": [
+                    {
+                      "id": "act_closeFlow",
+                      "type": "closeFlow"
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_352I": {
+              "id": "el_352I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "X",
+                  "size": 20,
+                  "type": "phosphor",
+                  "color": {
+                    "hex": "#333333",
+                    "type": "hex"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_353S": {
+              "id": "el_353S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "end",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_354T": {
+              "id": "el_354T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "h1"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-900"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Upgrade Lumen",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none"
+              },
+              "states": []
+            },
+            "el_355T": {
+              "id": "el_355T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Choose the plan that fits you.",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none"
+              },
+              "states": []
+            },
+            "el_356S": {
+              "id": "el_356S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_357S": {
+              "id": "el_357S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "List"
+            },
+            "el_358S": {
+              "id": "el_358S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_359I": {
+              "id": "el_359I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Sparkle",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_360S": {
+              "id": "el_360S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_361T": {
+              "id": "el_361T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Unlimited AI edits",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_362T": {
+              "id": "el_362T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "No daily limits",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_363S": {
+              "id": "el_363S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_364I": {
+              "id": "el_364I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Palette",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_365S": {
+              "id": "el_365S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_366T": {
+              "id": "el_366T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Pro filters and styles",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_367T": {
+              "id": "el_367T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "New packs every week",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_368S": {
+              "id": "el_368S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_369I": {
+              "id": "el_369I",
+              "type": "icon",
+              "props": {
+                "icon": {
+                  "name": "Infinity",
+                  "size": 24,
+                  "type": "phosphor",
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "accent"
+                  },
+                  "weight": "regular"
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "icon"
+            },
+            "el_370S": {
+              "id": "el_370S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_371T": {
+              "id": "el_371T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Lifetime option",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_372T": {
+              "id": "el_372T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "body"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "One payment, no renewals",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_373S": {
+              "id": "el_373S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Products"
+            },
+            "el_374P": {
+              "id": "el_374P",
+              "type": "product",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-100"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "default": true,
+                "groupId": "plans",
+                "padding": {
+                  "top": 12,
+                  "left": 12,
+                  "right": 12,
+                  "bottom": 12
+                },
+                "product": {
+                  "id": "969397cf-881a-42ef-bb4d-0b82eef7f5fd"
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [
+                {
+                  "id": "selected",
+                  "type": "system"
+                }
+              ],
+              "caption": "Product",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_375S": {
+              "id": "el_375S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_376T": {
+              "id": "el_376T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "h3"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Annual",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_377T": {
+              "id": "el_377T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "small-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          },
+                          {
+                            "type": "variable",
+                            "attrs": {
+                              "productRef": {
+                                "field": "prod_price",
+                                "target": {
+                                  "id": "969397cf-881a-42ef-bb4d-0b82eef7f5fd",
+                                  "kind": "product"
+                                }
+                              },
+                              "variableId": "969397cf-881a-42ef-bb4d-0b82eef7f5fd.prod_price"
+                            }
+                          },
+                          {
+                            "text": " per year, best value",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_378S": {
+              "id": "el_378S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-200"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Radiobutton",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_379S": {
+              "id": "el_379S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Dot",
+              "propsByState": {
+                "selected": {
+                  "fill": [
+                    {
+                      "type": "color",
+                      "color": {
+                        "type": "color-style",
+                        "colorId": "gray-800"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "el_380P": {
+              "id": "el_380P",
+              "type": "product",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-100"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "default": false,
+                "groupId": "plans",
+                "padding": {
+                  "top": 12,
+                  "left": 12,
+                  "right": 12,
+                  "bottom": 12
+                },
+                "product": {
+                  "id": "9c7091ff-9e03-4266-a5d5-0a6c3a2447f3"
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [
+                {
+                  "id": "selected",
+                  "type": "system"
+                }
+              ],
+              "caption": "Product",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_381S": {
+              "id": "el_381S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 8,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_382T": {
+              "id": "el_382T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "h3"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Lifetime",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_383T": {
+              "id": "el_383T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "small-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-800"
+                },
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          },
+                          {
+                            "type": "variable",
+                            "attrs": {
+                              "productRef": {
+                                "field": "prod_price",
+                                "target": {
+                                  "id": "9c7091ff-9e03-4266-a5d5-0a6c3a2447f3",
+                                  "kind": "product"
+                                }
+                              },
+                              "variableId": "9c7091ff-9e03-4266-a5d5-0a6c3a2447f3.prod_price"
+                            }
+                          },
+                          {
+                            "text": " once, yours forever",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": []
+            },
+            "el_384S": {
+              "id": "el_384S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "border": {
+                  "color": {
+                    "type": "color-style",
+                    "colorId": "gray-200"
+                  },
+                  "width": 1
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 24
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 0,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Radiobutton",
+              "propsByState": {
+                "selected": {
+                  "border": {
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "gray-800"
+                    },
+                    "width": 1
+                  }
+                }
+              }
+            },
+            "el_385S": {
+              "id": "el_385S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 8
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 9999,
+                  "br": 9999,
+                  "tl": 9999,
+                  "tr": 9999
+                }
+              },
+              "states": [],
+              "caption": "Dot",
+              "propsByState": {
+                "selected": {
+                  "fill": [
+                    {
+                      "type": "color",
+                      "color": {
+                        "type": "color-style",
+                        "colorId": "gray-800"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "el_386S": {
+              "id": "el_386S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "start",
+                  "alignV": "start",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 20,
+                    "type": "gap"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": []
+            },
+            "el_387F": {
+              "id": "el_387F",
+              "type": "footer",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "white"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "end",
+                  "direction": "vertical",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 24,
+                  "left": 16,
+                  "right": 16,
+                  "bottom": 16
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Footer"
+            },
+            "el_388S": {
+              "id": "el_388S",
+              "type": "stack",
+              "props": {
+                "fill": [
+                  {
+                    "type": "color",
+                    "color": {
+                      "type": "color-style",
+                      "colorId": "accent"
+                    }
+                  }
+                ],
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 48
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 16,
+                  "right": 16,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "CTA button",
+              "interactions": [
+                {
+                  "id": "int_388S",
+                  "actions": [
+                    {
+                      "id": "act_buy",
+                      "type": "purchase",
+                      "payload": {
+                        "product": {
+                          "type": "var",
+                          "variableId": "plans.selectedProduct"
+                        }
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_389T": {
+              "id": "el_389T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "button-label"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "white"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Upgrade",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "CTA label"
+            },
+            "el_390S": {
+              "id": "el_390S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "type": "space-between"
+                  }
+                },
+                "position": {
+                  "type": "relative"
+                }
+              },
+              "states": [],
+              "caption": "Footer links"
+            },
+            "el_391S": {
+              "id": "el_391S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Terms button",
+              "interactions": [
+                {
+                  "id": "int_391S",
+                  "actions": [
+                    {
+                      "id": "act_terms",
+                      "type": "openUrl",
+                      "payload": {
+                        "url": "https://adapty.io/terms/"
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_392T": {
+              "id": "el_392T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Terms",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Terms label"
+            },
+            "el_393S": {
+              "id": "el_393S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Restore button",
+              "interactions": [
+                {
+                  "id": "int_393S",
+                  "actions": [
+                    {
+                      "id": "act_restorePurchases",
+                      "type": "restorePurchases"
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_394T": {
+              "id": "el_394T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": "Restore",
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Restore label"
+            },
+            "el_395S": {
+              "id": "el_395S",
+              "type": "stack",
+              "props": {
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                },
+                "layout": {
+                  "alignH": "center",
+                  "alignV": "center",
+                  "direction": "horizontal",
+                  "distribution": {
+                    "gap": 16,
+                    "type": "gap"
+                  }
+                },
+                "padding": {
+                  "top": 0,
+                  "left": 8,
+                  "right": 8,
+                  "bottom": 0
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "borderRadius": {
+                  "bl": 12,
+                  "br": 12,
+                  "tl": 12,
+                  "tr": 12
+                }
+              },
+              "states": [],
+              "caption": "Privacy button",
+              "interactions": [
+                {
+                  "id": "int_395S",
+                  "actions": [
+                    {
+                      "id": "act_privacy",
+                      "type": "openUrl",
+                      "payload": {
+                        "url": "https://adapty.io/privacy/"
+                      }
+                    }
+                  ],
+                  "trigger": "tap"
+                }
+              ]
+            },
+            "el_396T": {
+              "id": "el_396T",
+              "type": "text",
+              "props": {
+                "font": {
+                  "preset": "caption"
+                },
+                "align": "left",
+                "color": {
+                  "type": "color-style",
+                  "colorId": "gray-500"
+                },
+                "width": {
+                  "type": "hug"
+                },
+                "height": {
+                  "type": "hug"
+                },
+                "layout": "auto-height",
+                "content": {
+                  "values": {
+                    "en": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Privacy",
+                            "type": "text",
+                            "attrs": {
+                              "bold": false,
+                              "italic": false,
+                              "underline": false,
+                              "strikethrough": false
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "_localizable": true
+                },
+                "position": {
+                  "type": "relative"
+                },
+                "decoration": "none",
+                "verticalAlign": "top"
+              },
+              "states": [],
+              "caption": "Privacy label"
+            }
+          },
+          "hierarchy": {
+            "id": "root",
+            "children": [
+              {
+                "id": "el_386S",
+                "children": [
+                  {
+                    "id": "el_353S",
+                    "children": [
+                      {
+                        "id": "el_351S",
+                        "children": [
+                          {
+                            "id": "el_352I"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_356S",
+                    "children": [
+                      {
+                        "id": "el_354T"
+                      },
+                      {
+                        "id": "el_355T"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_357S",
+                    "children": [
+                      {
+                        "id": "el_358S",
+                        "children": [
+                          {
+                            "id": "el_359I"
+                          },
+                          {
+                            "id": "el_360S",
+                            "children": [
+                              {
+                                "id": "el_361T"
+                              },
+                              {
+                                "id": "el_362T"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_363S",
+                        "children": [
+                          {
+                            "id": "el_364I"
+                          },
+                          {
+                            "id": "el_365S",
+                            "children": [
+                              {
+                                "id": "el_366T"
+                              },
+                              {
+                                "id": "el_367T"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_368S",
+                        "children": [
+                          {
+                            "id": "el_369I"
+                          },
+                          {
+                            "id": "el_370S",
+                            "children": [
+                              {
+                                "id": "el_371T"
+                              },
+                              {
+                                "id": "el_372T"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_373S",
+                    "children": [
+                      {
+                        "id": "el_374P",
+                        "children": [
+                          {
+                            "id": "el_375S",
+                            "children": [
+                              {
+                                "id": "el_376T"
+                              },
+                              {
+                                "id": "el_377T"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "el_378S",
+                            "children": [
+                              {
+                                "id": "el_379S"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_380P",
+                        "children": [
+                          {
+                            "id": "el_381S",
+                            "children": [
+                              {
+                                "id": "el_382T"
+                              },
+                              {
+                                "id": "el_383T"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "el_384S",
+                            "children": [
+                              {
+                                "id": "el_385S"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "el_387F",
+                "children": [
+                  {
+                    "id": "el_388S",
+                    "children": [
+                      {
+                        "id": "el_389T"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "el_390S",
+                    "children": [
+                      {
+                        "id": "el_391S",
+                        "children": [
+                          {
+                            "id": "el_392T"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_393S",
+                        "children": [
+                          {
+                            "id": "el_394T"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "el_395S",
+                        "children": [
+                          {
+                            "id": "el_396T"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "products": [
+          {
+            "id": "969397cf-881a-42ef-bb4d-0b82eef7f5fd"
+          },
+          {
+            "id": "9c7091ff-9e03-4266-a5d5-0a6c3a2447f3"
+          }
+        ],
+        "selectableGroups": [
+          {
+            "id": "plans",
+            "type": "product"
+          }
+        ]
+      }
+    ],
+    "locales": [
+      {
+        "id": "en",
+        "code": "en",
+        "name": "English"
+      }
+    ],
+    "defaultLocale": "en",
+    "variables": [],
+    "theme": {
+      "colors": [
+        {
+          "id": "accent",
+          "dark": {
+            "hex": "#6C4CF5"
+          },
+          "name": "Accent",
+          "light": {
+            "hex": "#6C4CF5"
+          }
+        },
+        {
+          "id": "white",
+          "dark": {
+            "hex": "#FFFFFF"
+          },
+          "name": "White",
+          "light": {
+            "hex": "#FFFFFF"
+          }
+        },
+        {
+          "id": "gray-100",
+          "dark": {
+            "hex": "#F4F3F8"
+          },
+          "name": "Gray 100",
+          "light": {
+            "hex": "#F4F3F8"
+          }
+        },
+        {
+          "id": "gray-200",
+          "dark": {
+            "hex": "#E4E2EC"
+          },
+          "name": "Gray 200",
+          "light": {
+            "hex": "#E4E2EC"
+          }
+        },
+        {
+          "id": "gray-300",
+          "dark": {
+            "hex": "#CFCCDA"
+          },
+          "name": "Gray 300",
+          "light": {
+            "hex": "#CFCCDA"
+          }
+        },
+        {
+          "id": "gray-400",
+          "dark": {
+            "hex": "#A9A5B8"
+          },
+          "name": "Gray 400",
+          "light": {
+            "hex": "#A9A5B8"
+          }
+        },
+        {
+          "id": "gray-500",
+          "dark": {
+            "hex": "#7D7990"
+          },
+          "name": "Gray 500",
+          "light": {
+            "hex": "#7D7990"
+          }
+        },
+        {
+          "id": "gray-700",
+          "dark": {
+            "hex": "#3D3950"
+          },
+          "name": "Gray 700",
+          "light": {
+            "hex": "#3D3950"
+          }
+        },
+        {
+          "id": "gray-800",
+          "dark": {
+            "hex": "#24212F"
+          },
+          "name": "Gray 800",
+          "light": {
+            "hex": "#24212F"
+          }
+        },
+        {
+          "id": "gray-900",
+          "dark": {
+            "hex": "#14121C"
+          },
+          "name": "Gray 900",
+          "light": {
+            "hex": "#14121C"
+          }
+        }
+      ],
+      "typography": [
+        {
+          "id": "h1",
+          "name": "H1",
+          "settings": {
+            "size": 30,
+            "weight": "bold"
+          }
+        },
+        {
+          "id": "h2",
+          "name": "H2",
+          "settings": {
+            "size": 24,
+            "weight": "bold"
+          }
+        },
+        {
+          "id": "h3",
+          "name": "H3",
+          "settings": {
+            "size": 17,
+            "weight": "semibold"
+          }
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "settings": {
+            "size": 15,
+            "weight": "regular"
+          }
+        },
+        {
+          "id": "button-label",
+          "name": "Button label",
+          "settings": {
+            "size": 16,
+            "weight": "semibold"
+          }
+        },
+        {
+          "id": "caption",
+          "name": "Caption",
+          "settings": {
+            "size": 12,
+            "weight": "regular"
+          }
+        },
+        {
+          "id": "small-label",
+          "name": "Small label",
+          "settings": {
+            "size": 13,
+            "weight": "regular"
+          }
+        }
+      ]
+    },
+    "components": {},
+    "_meta": {
+      "icons": [
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z\"></path></svg>",
+          "name": "X",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z\"></path></svg>",
+          "name": "Sparkle",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z\"></path></svg>",
+          "name": "Palette",
+          "weight": "regular"
+        },
+        {
+          "raw": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z\"></path></svg>",
+          "name": "Infinity",
+          "weight": "regular"
+        }
+      ],
+      "fonts": [],
+      "screens": {
+        "scr_paywall": {
+          "products": [
+            {
+              "id": "969397cf-881a-42ef-bb4d-0b82eef7f5fd",
+              "flowProductId": "be065409-c748-5c40-97c7-89a67339347e"
+            },
+            {
+              "id": "9c7091ff-9e03-4266-a5d5-0a6c3a2447f3",
+              "flowProductId": "c2492f18-0109-52ff-9712-0b3614310cc6"
+            }
+          ]
+        }
+      }
+    },
+    "schemaVersion": 12
+  },
+  "remote_configs": [],
+  "updated_at": 1793991646817,
+  "status": "published",
+  "publication_status": "published",
+  "transform_error": null,
+  "publication_error": null
+}

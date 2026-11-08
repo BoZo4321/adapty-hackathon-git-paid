@@ -6,12 +6,16 @@ Dry run by default. Usage (from repo root):
     python -m backend.adapty_engine.profile_sync --limit 1 --apply   # send ONE real request
     python -m backend.adapty_engine.profile_sync --input path.json --apply --delay 0.5
 
+Input users carry churn_risk_score (0-100). It is sent to Adapty as "churn_risk", and
+churn_risk_level is always derived from it; any churn_risk_level in the input is ignored.
+
 The secret key is read from .env (ADAPTY_SECRET_KEY) and is never printed or logged.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import sys
@@ -26,14 +30,21 @@ PROFILE_URL = "https://api.adapty.io/api/v2/server-side-api/profile/"
 CUSTOMER_PREFIX = "lumen_942195_"
 MAX_ADAPTY_USER_NUM = 4999  # only u00000-u04999 exist in Adapty
 
+CHURN_RISK_MIN = 0.0
+CHURN_RISK_MAX = 100.0
+CHURN_RISK_MEDIUM_FROM = 40.0
+CHURN_RISK_HIGH_FROM = 75.0
+
 # Attributes created by hand in the Adapty dashboard. key -> spec
 ATTRIBUTES: dict[str, dict[str, Any]] = {
+    "churn_risk": {"type": "number"},
     "churn_risk_level": {"type": "string", "allowed": ("low", "medium", "high")},
     "streak_days": {"type": "number"},
     "streak_best": {"type": "number"},
     "inactive_days": {"type": "number"},
     "streak_breaks": {"type": "number"},
 }
+STREAK_KEYS = ("streak_days", "streak_best", "inactive_days", "streak_breaks")
 _KEY_RE = re.compile(r"^[A-Za-z0-9_.\-]{1,30}$")
 assert all(_KEY_RE.match(k) for k in ATTRIBUTES), "invalid attribute key"
 
@@ -59,23 +70,45 @@ def resolve_customer_user_id(user: dict[str, Any]) -> str:
     return str(cid)
 
 
+def churn_risk_level_for(score: float) -> str:
+    """Map a 0-100 churn risk score to low / medium / high (same tiers as risk_engine)."""
+    if score < CHURN_RISK_MEDIUM_FROM:
+        return "low"
+    if score < CHURN_RISK_HIGH_FROM:
+        return "medium"
+    return "high"
+
+
+def _number(user: dict[str, Any], key: str) -> float:
+    """Required finite number (int or float, not bool/NaN/inf), returned as float."""
+    if key not in user or user[key] is None:
+        raise UserError(f"missing field {key!r}")
+    value = user[key]
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+        raise UserError(f"{key}={value!r} is not a finite number")
+    return float(value)  # Adapty rejects JSON ints ("value is not a valid float")
+
+
 def build_custom_attributes(user: dict[str, Any]) -> list[dict[str, Any]]:
-    """Validate the 5 fields and return Adapty's [{"key", "value"}] list."""
-    out: list[dict[str, Any]] = []
-    for key, spec in ATTRIBUTES.items():
-        if key not in user or user[key] is None:
-            raise UserError(f"missing field {key!r}")
-        value = user[key]
-        if spec["type"] == "string":
-            if not isinstance(value, str) or value not in spec["allowed"]:
-                raise UserError(f"{key}={value!r} not in {spec['allowed']}")
-        else:
-            if isinstance(value, bool) or not isinstance(value, (int, float)):
-                raise UserError(f"{key}={value!r} is not a number")
-            if value < 0:
-                raise UserError(f"{key}={value!r} is negative")
-            # Adapty rejects JSON ints ("value is not a valid float"); send 21.0 not 21.
-            value = float(value)
+    """Validate input and return Adapty's [{"key", "value"}] list (6 attributes).
+
+    Reads churn_risk_score, sends it as "churn_risk", and derives churn_risk_level from it.
+    An input churn_risk_level (e.g. "critical" from the frontend) is ignored.
+    """
+    risk = _number(user, "churn_risk_score")
+    if not CHURN_RISK_MIN <= risk <= CHURN_RISK_MAX:
+        raise UserError(
+            f"churn_risk_score={risk!r} is outside [{CHURN_RISK_MIN:g}, {CHURN_RISK_MAX:g}]")
+    level = churn_risk_level_for(risk)
+    assert level in ATTRIBUTES["churn_risk_level"]["allowed"]
+    out: list[dict[str, Any]] = [
+        {"key": "churn_risk", "value": risk},
+        {"key": "churn_risk_level", "value": level},
+    ]
+    for key in STREAK_KEYS:
+        value = _number(user, key)
+        if value < 0:
+            raise UserError(f"{key}={value!r} is negative")
         out.append({"key": key, "value": value})
     return out
 
