@@ -1,0 +1,50 @@
+{
+  "_note": "PLACEHOLDER mock data. The backend (GET /api/analytics/summary) replaces every number here.",
+  "kpi": {
+    "subscribers_scored": 18400,
+    "at_risk_users": 7200,
+    "revenue_at_risk_usd": 112000
+  },
+  "tiers": [
+    {
+      "tier": "high",
+      "min_score": 70,
+      "users": 2300,
+      "avg_risk": 0.8,
+      "actual_churn_rate": 0.6,
+      "revenue_at_risk_usd": 48000,
+      "action": "10% off upper tier (streak rescue)"
+    },
+    {
+      "tier": "medium",
+      "min_score": 35,
+      "users": 4900,
+      "avg_risk": 0.5,
+      "actual_churn_rate": 0.3,
+      "revenue_at_risk_usd": 64000,
+      "action": "Upgrade offer to higher tier"
+    },
+    {
+      "tier": "low",
+      "min_score": 0,
+      "users": 11200,
+      "avg_risk": 0.1,
+      "actual_churn_rate": 0.05,
+      "revenue_at_risk_usd": 10000,
+      "action": "No paywall, celebrate streak"
+    }
+  ],
+  "churn_by_plan": [
+    { "plan": "weekly", "churn_rate": 0.55 },
+    { "plan": "monthly", "churn_rate": 0.35 },
+    { "plan": "annual_trial", "churn_rate": 0.4 },
+    { "plan": "annual", "churn_rate": 0.15 },
+    { "plan": "pro_annual", "churn_rate": 0.1 }
+  ],
+  "streak_decay": {
+    "days_before_event": [14, 12, 10, 8, 6, 4, 2, 0],
+    "churned": [6, 6, 5, 4, 3, 2, 1, 0],
+    "retained": [7, 7, 8, 8, 8, 9, 9, 9],
+    "simulated": true
+  }
+}
