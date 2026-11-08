@@ -1,0 +1,45 @@
+ai_edits_first_day
+photos_imported
+price_usd
+is_trial_converter
+days_since_last_purchase
+streak_days
+streak_best
+inactive_days
+streak_breaks
+streak_resilience
+push_opt_in_bin
+days_since_install
+country_au
+country_br
+country_ca
+country_de
+country_fr
+country_gb
+country_in
+country_jp
+country_mx
+country_nl
+country_pl
+country_rs
+country_se
+country_tr
+country_us
+os_android 13
+os_android 14
+os_android 15
+os_android 16
+os_ios 17.6
+os_ios 18.1
+os_ios 18.3
+os_ios 26.0
+acquisition_channel_apple_search_ads
+acquisition_channel_google_uac
+acquisition_channel_meta_ads
+acquisition_channel_organic
+acquisition_channel_tiktok_ads
+onboarding_goal_family
+onboarding_goal_product_photos
+onboarding_goal_selfies
+onboarding_goal_social_content
+onboarding_goal_travel
