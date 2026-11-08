@@ -19,6 +19,9 @@ env/
 data/*.parquet
 data/*.csv
 data/*.csv.gz
+# Lumen seed data is committed so the backend runs right after cloning
+!data/users.csv.gz
+!data/transactions.csv.gz
 data/adapty_sync/
 backend/data_cache/
 *.tmp

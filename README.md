@@ -36,8 +36,8 @@ Growth and monetization teams of subscription apps on Adapty who want proactive 
 
 | Component | Status | Details |
 |---|:---:|---|
-| Users and demographics | ✅ Real | 50,000 users from the Lumen seed dataset (`users.csv.gz`) |
-| Transactions | ✅ Real | 29,794 purchase events from 14,304 paying users (`transactions.csv.gz`) |
+| Users and demographics | ✅ Real | 50,000 users from the Lumen seed dataset (`data/users.csv.gz`) |
+| Transactions | ✅ Real | 29,794 purchase events from 14,304 paying users (`data/transactions.csv.gz`) |
 | Churn model | ✅ Real | XGBoost, 45 features, stratified 80/20 split. Holdout: ROC-AUC 0.87, accuracy 0.81, recall 0.74, precision 0.43 |
 | Churn by plan, churn per tier | ✅ Real | Computed from the dataset (e.g. weekly 80%, annual_trial 71%, monthly 22%) |
 | Adapty integration | ✅ Real | App `9717a53d…`: custom attributes, 2 segments, 2 flows, placement `streak_retention`. Profiles `u00000`-`u04999` are synced with backend scripts |
@@ -92,14 +92,11 @@ React + Vite dashboard (frontend/, port 5173)
 python -m pip install -r backend/requirements.txt
 ```
 
-**2. Seed data.** The Lumen CSVs are not in git (they are large and come from the organizers). Get the seed repo and copy the two offline files into `data/`:
-```bash
-git clone https://github.com/kpotehin/adapty-seed-data-hack.git ../adapty-seed-data-hack
-cp ../adapty-seed-data-hack/data/offline/users.csv.gz ../adapty-seed-data-hack/data/offline/transactions.csv.gz data/
-```
-- Plain `.csv` files work too. The backend looks for `users.csv(.gz)` and `transactions.csv(.gz)` in `data/` and `data/offline/`.
-- Alternative to copying: set `SEED_DATA_DIR` to `<seed-repo>/data/offline` in the terminal that starts the backend. The backend does not read it from `.env`.
-- The simulated streaks (`data/streaks/streaks.csv`, `activity_log.csv`) are already in the repo. To regenerate them: `python backend/risk_engine/enrich_streaks.py --data-dir <seed-repo>/data/offline`.
+**2. Seed data.** Nothing to do, the data is in the repo:
+- `data/users.csv.gz` and `data/transactions.csv.gz`: the Lumen seed dataset from the organizers ([kpotehin/adapty-seed-data-hack](https://github.com/kpotehin/adapty-seed-data-hack), `data/offline/`)
+- `data/streaks/streaks.csv` and `activity_log.csv`: the simulated daily streaks
+
+The backend reads `users.csv(.gz)` and `transactions.csv(.gz)` from `data/` (or `data/offline/`). To regenerate the streaks, run `python backend/risk_engine/enrich_streaks.py --data-dir <folder>`, where `<folder>` contains the unzipped `users.csv` and `transactions.csv`.
 
 **3. Backend** (keep this terminal open):
 ```bash
