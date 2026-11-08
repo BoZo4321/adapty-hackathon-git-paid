@@ -3,7 +3,6 @@
  * - 🟢 Low Risk: No Paywall (In-App Active Streak Celebration inside Lumen)
  * - 🟡 Mid Risk: Upgrade to Higher Tier (Locks in commitment on Annual / Pro Annual AI Studio)
  * - 🔴 High / Critical Risk: 10% Rescue Discount on any Upper Tier (Streak Recovery Paywall)
- * Also includes a live `schemaVersion: 12` JSON inspector toggle.
  */
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -142,67 +141,12 @@ export function buildTierPaywallCopy(
   };
 }
 
-export function buildSchemaV12PreviewJson(copy: PaywallCopy): Record<string, unknown> {
-  return {
-    schemaVersion: 12,
-    defaultLocale: "en",
-    _meta: {
-      screens: {
-        scr_paywall: {
-          products: [
-            {
-              id: copy.target_product_uuid,
-              flowProductId: copy.flow_product_id,
-            },
-          ],
-        },
-      },
-    },
-    screens: [
-      {
-        id: "scr_paywall",
-        caption: "Paywall",
-        products: [{ id: copy.target_product_uuid }],
-        elements: {
-          map: {
-            el_400T: {
-              id: "el_400T",
-              type: "text",
-              font: { preset: "h1" },
-              text_en: copy.headline,
-            },
-            el_401T: {
-              id: "el_401T",
-              type: "text",
-              font: { preset: "body" },
-              text_en: copy.subtitle,
-            },
-            el_420P: {
-              id: "el_420P",
-              type: "product",
-              product: { id: copy.target_product_uuid },
-              plan_title_el_422T: copy.plan_title,
-            },
-            el_429T: {
-              id: "el_429T",
-              type: "text",
-              caption: "CTA label",
-              text_en: copy.cta_text,
-            },
-          },
-        },
-      },
-    ],
-  };
-}
-
 export const MobilePreview: React.FC<Props> = ({
   user,
   copyOverride,
   selectedUpperTier = "annual",
 }) => {
   const [activeTab, setActiveTab] = useState<SimulatorTierTab>("high");
-  const [showJson, setShowJson] = useState<boolean>(false);
 
   // Auto-switch the iPhone tab whenever the selected user's risk level changes
   useEffect(() => {
@@ -220,7 +164,6 @@ export const MobilePreview: React.FC<Props> = ({
     [user, activeTab, selectedUpperTier, copyOverride]
   );
 
-  const compiledJson = useMemo(() => buildSchemaV12PreviewJson(activeCopy), [activeCopy]);
   const goal = GOAL_DISPLAY[user.onboarding_goal] || GOAL_DISPLAY.social_content;
 
   return (
@@ -229,11 +172,10 @@ export const MobilePreview: React.FC<Props> = ({
         background: "#171524",
         border: "1px solid #2b2740",
         borderRadius: 12,
-        padding: 18,
-        marginBottom: 16,
+        padding: 16,
       }}
     >
-      {/* Top Header + JSON Inspector Toggle */}
+      {/* Top Header */}
       <div
         style={{
           display: "flex",
@@ -251,22 +193,6 @@ export const MobilePreview: React.FC<Props> = ({
             <code>flowProductId</code> verified
           </div>
         </div>
-
-        <button
-          onClick={() => setShowJson((prev) => !prev)}
-          style={{
-            padding: "5px 10px",
-            borderRadius: 6,
-            border: "1px solid #352f52",
-            background: showJson ? "#6c4cf5" : "#1e1b2e",
-            color: "#fff",
-            fontSize: 11,
-            fontWeight: 600,
-            cursor: "pointer",
-          }}
-        >
-          {showJson ? "📱 Show iPhone UI" : "{ } Inspect schemaVersion: 12 JSON"}
-        </button>
       </div>
 
       {/* 3 Risk State Switcher Tabs */}
@@ -327,30 +253,7 @@ export const MobilePreview: React.FC<Props> = ({
         })}
       </div>
 
-      {/* Main View: Either JSON Inspector or iPhone 15 Frame */}
-      {showJson ? (
-        <div
-          style={{
-            background: "#0d0b14",
-            border: "1px solid #2b2740",
-            borderRadius: 12,
-            padding: 14,
-            maxHeight: 490,
-            overflowY: "auto",
-            fontFamily: "monospace",
-            fontSize: 11,
-            color: "#a7f3d0",
-          }}
-        >
-          <div style={{ color: "#c084fc", marginBottom: 8, fontWeight: 700 }}>
-            // Compiled Flow Builder Config (Ready for `adapty flows config update`)
-          </div>
-          <pre style={{ margin: 0, whiteSpace: "pre-wrap" }}>
-            {JSON.stringify(compiledJson, null, 2)}
-          </pre>
-        </div>
-      ) : (
-        /* iPhone Frame */
+      {/* iPhone 15 Frame */}
         <div
           style={{
             width: 320,
@@ -729,7 +632,6 @@ export const MobilePreview: React.FC<Props> = ({
             )}
           </div>
         </div>
-      )}
     </section>
   );
 };
